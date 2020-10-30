@@ -19,5 +19,6 @@
     "private_key": "str",
     "peer_id": "str"
   },
-  "host_network": true
+  "host_network": true,
+  "image": "pascal90/wireguard-peer-addon"
 }
