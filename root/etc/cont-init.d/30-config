@@ -249,28 +249,8 @@ if [ -n "$PEERS" ]; then
   else
     echo "**** Peer DNS servers will be set to $PEERDNS ****"
   fi
-  if [ ! -f /config/wg0.conf ]; then
-    echo "**** No wg0.conf found (maybe an initial install), generating 1 server and ${PEERS} peer/client confs ****"
-    generate_confs
-    save_vars
-  else
-    echo "**** Server mode is selected ****"
-    [[ -f /config/.donoteditthisfile ]] && \
-      . /config/.donoteditthisfile
-    if [ "$SERVERURL" != "$ORIG_SERVERURL" ] || [ "$SERVERPORT" != "$ORIG_SERVERPORT" ] || [ "$PEERDNS" != "$ORIG_PEERDNS" ] || [ "$PEERS" != "$ORIG_PEERS" ] || [ "$INTERFACE" != "$ORIG_INTERFACE" ] || [ "$ALLOWEDIPS" != "$ORIG_ALLOWEDIPS" ]; then
-      echo "**** Server related environment variables changed, regenerating 1 server and ${PEERS} peer/client confs ****"
-      generate_confs
-      save_vars
-    else
-      echo "**** No changes to parameters. Existing configs are used. ****"
-    fi
-  fi
 else
   echo "**** Client mode selected. ****"
-  if [ ! -f /config/wg0.conf ]; then
-    echo "**** No client conf found. Provide your own client conf as \"/config/wg0.conf\" and restart the container. ****"
-    sleep infinity
-  fi
   echo "**** Disabling CoreDNS ****"
   rm -rf /etc/services.d/coredns
 fi
