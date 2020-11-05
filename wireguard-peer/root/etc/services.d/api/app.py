@@ -25,18 +25,17 @@ def get_ip(peer_id):
   return requests.get(url).text
 
 def get_config(ip, proxy_ip, private_key, public_key):
-  return """
-    [Interface]
-    Address = {}
-    PrivateKey = {}
-    ListenPort = 51820
-    DNS = 10.13.13.1
-
-    [Peer]
-    PublicKey = {}
-    Endpoint = {}:51820
-    AllowedIPs = 0.0.0.0/0
-  """.format(ip, private_key, public_key, proxy_ip)
+  return \
+    '[Interface]\n' \
+    'Address = {}\n' \
+    'PrivateKey = {}\n' \
+    'ListenPort = 51820\n' \
+    'DNS = 10.13.13.1\n' \
+    '\n' \
+    '[Peer]\n' \
+    'PublicKey = {}\n' \
+    'Endpoint = {}:51820\n' \
+    'AllowedIPs = 0.0.0.0/0\n'.format(ip, private_key, public_key, proxy_ip)
 
 if __name__ == '__main__':
   with open('/data/options.json') as options_file:
