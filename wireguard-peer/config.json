@@ -1,6 +1,6 @@
 {
   "name": "Wireguard Peer",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "slug": "wireguard_peer",
   "description": "Wireguard peer with ability to be controlled by Odoo VPN addon",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
@@ -8,7 +8,7 @@
   "boot": "auto",
   "privileged": ["NET_ADMIN"],
   "environment": {
-    "VPN_MANAGER_URL": "http://192.168.41.123:8069",
+    "VPN_MANAGER_URL": "https://starygosciniec1ky.pl",
     "PUBLIC_KEY": "lkVpFNKZ/WefGBARwtuEOkpI0DOF/7eObKGThtt0ZnE="
   },
   "options": {
@@ -20,5 +20,6 @@
     "peer_id": "str"
   },
   "host_network": true,
-  "watchdog": "http://[HOST]:[PORT:5000]/healthcheck"
+  "watchdog": "http://[HOST]:[PORT:5000]/healthcheck",
+  "image": "pascal90/wireguard-peer-addon"
 }
