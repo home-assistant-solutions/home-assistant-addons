@@ -1,6 +1,6 @@
 {
   "name": "Wireguard Peer",
-  "version": "0.0.15",
+  "version": "0.0.19",
   "slug": "wireguard_peer",
   "description": "Wireguard peer with ability to be controlled by Odoo VPN addon",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
@@ -20,6 +20,5 @@
     "peer_id": "str"
   },
   "host_network": true,
-  "watchdog": "http://[HOST]:[PORT:5000]/healthcheck",
   "image": "pascal90/wireguard-peer-addon"
 }
