@@ -14,10 +14,6 @@ logger.setLevel(logging.INFO)
 handler = logging.StreamHandler()
 handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
 logger.addHandler(handler)
-ip = None
-proxy_ip = None
-private_key = None
-public_key = None
 
 def get_proxy_ip(peer_id):
   url = '{}/proxy/ip?peer_id={}'.format(os.getenv('VPN_MANAGER_URL'), peer_id)
@@ -48,30 +44,6 @@ def generate_config(ip, proxy_ip, private_key, public_key):
   config_file.write(config)
   config_file.close()
 
-@app.route('/peer', methods=['PATCH'])
-def update_peer():
-  new_ip = ip
-  new_proxy_ip = proxy_ip
-  if 'peer_ip' in request.json:
-    logger.info('Peer IP changes: {}'.format(request.json['peer_ip']))
-    new_ip = request.json['peer_ip']
-  if 'proxy_ip' in request.json:
-    new_proxy_ip = request.json['proxy_ip']
-
-  generate_config(new_ip, new_proxy_ip, private_key, public_key)
-  logger.info('New IP: {}, new proxy IP: {}'.format(new_ip, new_proxy_ip))
-
-  def restart_wireguard():
-    time.sleep(1)
-    logger.info('Restarting wirequard interface')
-    subprocess.run(['wg-quick', 'down', 'wg0'])
-    subprocess.run(['wg-quick', 'up', 'wg0'])
-
-  thread = Thread(target=restart_wireguard)
-  thread.start()
-
-  return '', 200
-
 def run_app():
   logger.info('Starting wireguard addon')
   options_file = open('/data/options.json', 'r')
@@ -91,6 +63,30 @@ def run_app():
   private_key = options['private_key']
   public_key = os.getenv('PUBLIC_KEY')
   logger.info('IP: {}, proxy IP: {}'.format(ip, proxy_ip))
+
+  @app.route('/peer', methods=['PATCH'])
+  def update_peer():
+    new_ip = ip
+    new_proxy_ip = proxy_ip
+    if 'peer_ip' in request.json:
+      logger.info('Peer IP changes: {}'.format(request.json['peer_ip']))
+      new_ip = request.json['peer_ip']
+    if 'proxy_ip' in request.json:
+      new_proxy_ip = request.json['proxy_ip']
+
+    generate_config(new_ip, new_proxy_ip, private_key, public_key)
+    logger.info('New IP: {}, new proxy IP: {}'.format(new_ip, new_proxy_ip))
+
+    def restart_wireguard():
+      time.sleep(1)
+      logger.info('Restarting wirequard interface')
+      subprocess.run(['wg-quick', 'down', 'wg0'])
+      subprocess.run(['wg-quick', 'up', 'wg0'])
+
+    thread = Thread(target=restart_wireguard)
+    thread.start()
+
+    return '', 200
 
   generate_config(ip, proxy_ip, private_key, public_key)
   subprocess.run(['wg-quick', 'up', 'wg0'])
