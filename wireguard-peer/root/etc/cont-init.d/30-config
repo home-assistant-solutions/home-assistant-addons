@@ -151,10 +151,10 @@ DUDE
   fi
 fi
 
-# prepare symlinks
-rm -rf /etc/wireguard
-mkdir -p /etc/wireguard
-
 # set up CoreDNS
 [[ ! -f /config/coredns/Corefile ]] && \
   cp /defaults/Corefile /config/coredns/Corefile
+
+# permissions
+chown -R abc:abc \
+	/config

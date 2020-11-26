@@ -14,6 +14,10 @@ logger.setLevel(logging.INFO)
 handler = logging.StreamHandler()
 handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
 logger.addHandler(handler)
+ip = None
+proxy_ip = None
+private_key = None
+public_key = None
 
 def get_proxy_ip(peer_id):
   url = '{}/proxy/ip?peer_id={}'.format(os.getenv('VPN_MANAGER_URL'), peer_id)
@@ -40,7 +44,7 @@ def get_config(ip, proxy_ip, private_key, public_key):
 
 def generate_config(ip, proxy_ip, private_key, public_key):
   config = get_config(ip, proxy_ip, private_key, public_key)
-  config_file = open('/config/wg0.conf', 'w')
+  config_file = open('/etc/wireguard/wg0.conf', 'w')
   config_file.write(config)
   config_file.close()
 
@@ -68,7 +72,8 @@ def update_peer():
 
   return '', 200
 
-def run():
+def run_app():
+  logger.info('Starting wireguard addon')
   options_file = open('/data/options.json', 'r')
   options = json.load(options_file)
   options_file.close()
@@ -93,4 +98,4 @@ def run():
   app.run(debug=True, host='0.0.0.0')
 
 if __name__ == '__main__':
-  run()
+  run_app()
