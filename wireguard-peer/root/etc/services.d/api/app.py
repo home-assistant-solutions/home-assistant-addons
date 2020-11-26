@@ -68,10 +68,18 @@ def update_peer():
 
   return '', 200
 
-if __name__ == '__main__':
+def run():
   options_file = open('/data/options.json', 'r')
   options = json.load(options_file)
   options_file.close()
+
+  if 'private_key' not in options or options['private_key'] == '':
+    logger.error('Please provide your private_key in configuration')
+    return
+  
+  if 'peer_id' not in options or options['peer_id'] == '':
+    logger.error('Please provide your peer_id in configuration')
+    return
 
   ip = get_ip(options['peer_id'])
   proxy_ip = get_proxy_ip(options['peer_id'])
@@ -83,3 +91,6 @@ if __name__ == '__main__':
   subprocess.run(['wg-quick', 'up', 'wg0'])
     
   app.run(debug=True, host='0.0.0.0')
+
+if __name__ == '__main__':
+  run()

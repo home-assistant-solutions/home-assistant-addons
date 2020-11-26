@@ -30,7 +30,7 @@ RUN \
   openresolv \
   perl \
   pkg-config \
-  qrencode  \
+  qrencode \
   python3 \
   python3-pip && \
   echo "**** install wireguard-tools ****" && \
