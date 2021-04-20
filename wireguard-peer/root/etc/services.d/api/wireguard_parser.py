@@ -52,7 +52,7 @@ class WireguardParser():
       '[Peer]\n' \
       'PublicKey = {}\n' \
       'Endpoint = {}:51820\n' \
-      'AllowedIPs = 10.0.0.0/8\n'.format(
+      'AllowedIPs = 0.0.0.0/0\n'.format(
         config.allowed_ip,
         config.private_key, 
         config.public_key, 
