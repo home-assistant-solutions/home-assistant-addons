@@ -1,51 +1,25 @@
 import json
 import logging
-import os
-import time
-from threading import Thread
-
 import requests
-from flask import Flask, request
-
 import wireguard
+
 from wireguard_parser import WireguardParser
 
-app = Flask(__name__)
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 handler = logging.StreamHandler()
 handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
 logger.addHandler(handler)
 
-def get_proxy_ip(peer_id):
-  url = '{}/proxy/ip?peer_id={}'.format(os.getenv('VPN_MANAGER_URL'), peer_id)
+def get_proxy_ip(server, peer_id):
+  url = '{}/proxy/ip?peer_id={}'.format(server, peer_id)
   logger.info('Requesting proxy ip for peer {}, url: {}'.format(peer_id, url))
   return requests.get(url).text
 
-def get_ip(peer_id):
-  url = '{}/peer/{}/ip'.format(os.getenv('VPN_MANAGER_URL'), peer_id)
+def get_ip(server, peer_id):
+  url = '{}/peer/{}/ip'.format(server, peer_id)
   logger.info('Requesting ip for peer {}, url: {}'.format(peer_id, url))
   return requests.get(url).text
-
-@app.route('/peer', methods=['PATCH'])
-def update_peer():
-  with WireguardParser() as config:
-    if 'peer_ip' in request.json:
-      logger.info('Peer IP changes: {}'.format(request.json['peer_ip']))
-      config.allowed_ip = request.json['peer_ip']
-    if 'proxy_ip' in request.json:
-      logger.info('Proxy IP changes: {}'.format(request.json['proxy_ip']))
-      config.endpoint = request.json['proxy_ip']
-
-  def restart_wireguard():
-    time.sleep(1)
-    logger.info('Restarting wirequard interface')
-    wireguard.restart()
-
-  thread = Thread(target=restart_wireguard)
-  thread.start()
-
-  return '', 200
 
 def run_app():
   logger.info('Starting wireguard addon')
@@ -64,13 +38,12 @@ def run_app():
   wireguard.touch_config()
 
   with WireguardParser() as config:
-    config.allowed_ip = get_ip(options['peer_id'])
-    config.endpoint = get_proxy_ip(options['peer_id'])
+    config.allowed_ip = get_ip(options['vpn_manager'], options['peer_id'])
+    config.endpoint = get_proxy_ip(options['vpn_manager'], options['peer_id'])
     config.private_key = options['private_key']
-    config.public_key = os.getenv('PUBLIC_KEY')
+    config.public_key = options['public_key']
 
   wireguard.restart()
-  app.run(debug=True, host='0.0.0.0')
 
 if __name__ == '__main__':
   run_app()
