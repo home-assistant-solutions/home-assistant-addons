@@ -1,9 +1,0 @@
-#!/usr/bin/with-contenv bashio
-_term() {
-  echo "Caught SIGTERM signal!"
-  wg-quick down wg0
-}
-
-trap _term SIGTERM
-python3 app.py
-sleep infinity & wait

@@ -38,6 +38,11 @@ class WireguardParser():
     except:
       config.public_key = None
 
+    try:
+      config.persistent_keppalive = re.search('PersistentKeepalive = .*\n', wireguard_config)[0].split(' = ')[1][:-1]
+    except:
+      config.persistent_keppalive = None
+
     return config
 
   @staticmethod
@@ -52,10 +57,12 @@ class WireguardParser():
       '[Peer]\n' \
       'PublicKey = {}\n' \
       'Endpoint = {}:51820\n' \
-      'AllowedIPs = 0.0.0.0/0\n'.format(
+      'AllowedIPs = 10.0.0.0/8\n' \
+      'PersistentKeepalive = {}\n'.format(
         config.allowed_ip,
         config.private_key, 
         config.public_key, 
-        config.endpoint
+        config.endpoint,
+        config.persistent_keppalive
       )
 
