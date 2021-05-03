@@ -7,20 +7,19 @@ orbs:
 jobs:
   release:
     executor: docker/machine
-    working_directory: $CIRCLE_BRANCH
     steps:
       - checkout
       - node/install:
           node-version: latest
       - run:
           name: Install 
-          command: npm install
+          command: cd $CIRCLE_BRANCH && npm install
       - run:
           name: Build
-          command: docker build -t pascal90/${CIRCLE_BRANCH}-addon .
+          command: cd $CIRCLE_BRANCH && docker build -t pascal90/${CIRCLE_BRANCH}-addon .
       - run:
           name: Release
-          command: npm run semantic-release
+          command: cd $CIRCLE_BRANCH && npm run semantic-release
 
 workflows:
   version: 2
