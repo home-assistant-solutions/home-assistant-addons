@@ -1,0 +1,32 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@2.0.1
+
+jobs:
+  release:
+    executor: docker/machine
+    working_directory: $CIRCLE_BRANCH
+    steps:
+      - checkout
+      - node/install:
+          node-version: latest
+      - run:
+          name: Install 
+          command: npm install
+      - run:
+          name: Build
+          command: docker build -t pascal90/${CIRCLE_BRANCH}-addon .
+      - run:
+          name: Release
+          command: npm run semantic-release
+
+workflows:
+  version: 2
+  pipeline:
+    jobs:
+      - release:
+          filters:
+            branches:
+              only: 
+                - wireguard-peer

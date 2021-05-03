@@ -1,11 +1,11 @@
 {
     "name": "wireguard-peer",
     "scripts": {
-        "semantic-release": "semantic-release --no-ci"
+        "semantic-release": "semantic-release"
     },
     "release": {
         "branches": [
-            "master"
+            "wireguard-peer"
         ],
         "extends": "semantic-release-monorepo",
         "plugins": [
