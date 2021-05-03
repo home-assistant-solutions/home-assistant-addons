@@ -26,6 +26,8 @@ workflows:
   pipeline:
     jobs:
       - release:
+          context:
+            - release
           filters:
             branches:
               only: 
