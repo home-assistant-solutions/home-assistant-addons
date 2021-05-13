@@ -16,7 +16,12 @@ jobs:
           command: cd $CIRCLE_BRANCH && npm install
       - run:
           name: Build
-          command: cd $CIRCLE_BRANCH && docker build -t pascal90/${CIRCLE_BRANCH}-addon .
+          command: |
+            if [ -f "$CIRCLE_BRANCH/Dockerfile" ]; then
+              cd $CIRCLE_BRANCH && docker build -t pascal90/${CIRCLE_BRANCH}-addon .
+            else
+              echo There is no Dockerfile in $CIRCLE_BRANCH. Skipping build step
+            fi
       - run:
           name: Release
           command: cd $CIRCLE_BRANCH && npm run semantic-release
