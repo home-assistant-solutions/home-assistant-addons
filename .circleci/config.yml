@@ -32,3 +32,4 @@ workflows:
             branches:
               only: 
                 - wireguard-peer
+                - zigbee2mqtt-multi-coordinator
