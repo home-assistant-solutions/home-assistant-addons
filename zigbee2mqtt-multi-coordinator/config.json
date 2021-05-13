@@ -1,6 +1,6 @@
 {
     "name": "Zigbee2mqtt Multi Coordinator",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "slug": "zigbee2mqtt-multi-coordinator",
     "description": "Zigbee2mqtt add-on with ability to support multiple coordinators",
     "uart": true,
@@ -95,7 +95,7 @@
               "password": "str?",
               "client_id": "str?",
               "keepalive": "int?",
-              "version": "int?",
+              "version": "1.0.0",
               "reject_unauthorized": "bool?",
               "include_device_information": "bool?",
               "force_disable_retain": "bool?"
