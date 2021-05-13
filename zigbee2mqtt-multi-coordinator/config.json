@@ -95,7 +95,7 @@
               "password": "str?",
               "client_id": "str?",
               "keepalive": "int?",
-              "version": "1.0.0",
+              "version": "int?",
               "reject_unauthorized": "bool?",
               "include_device_information": "bool?",
               "force_disable_retain": "bool?"
