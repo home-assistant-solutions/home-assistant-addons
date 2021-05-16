@@ -1,7 +1,13 @@
 #!/usr/bin/with-contenv bashio
 
 export NODE_PATH=/opt/zigbee2mqtt/node_modules
-export ZIGBEE2MQTT_DATA="$(bashio::config 'data_path')"
-cd /opt/zigbee2mqtt || bashio::exit.nok "Could not change directory to /app"
-bashio::log.info "Handing over control to Zigbee2mqtt Core ..."
-exec npm start
+COORDINATORS=$(bashio::config 'coordinators')
+cd /opt/zigbee2mqtt
+
+for COORDINATOR in $COORDINATORS
+do
+    NAME=$(echo $COORDINATOR | jq -r '.name')
+    bashio::log.info "Handing over control to Zigbee2mqtt Core for coordinator $NAME..."
+    ZIGBEE2MQTT_DATA=/config/zigbee2mqtt-multi-coordinator/$NAME npm start &
+done
+sleep infinity & wait
