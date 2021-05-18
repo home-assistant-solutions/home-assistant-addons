@@ -31,8 +31,10 @@ do
         fi
     fi
 
-    mkdir -p /config/zigbee2mqtt-multi-coordinator/$NAME
-    echo "$CONFIG" | jq 'del(.data_path, .zigbee_shepherd_devices, .socat)' \
+    DATA_PATH=$(echo $CONFIG | NAME="$NAME" jq -r 'if .data_path then .data_path else "/config/zigbee2mqtt-multi-coordinator/" + env.NAME end')
+    bashio::log.info "Data path for coordinator $NAME is $DATA_PATH"
+    mkdir -p $DATA_PATH
+    echo $CONFIG | jq 'del(.data_path, .zigbee_shepherd_devices, .socat)' \
         | jq 'if .devices then .devices = (.devices | split(",")|map(gsub("\\s+";"";"g"))) else . end' \
         | jq 'if .groups then .groups = (.groups | split(",")|map(gsub("\\s+";"";"g"))) else . end' \
         | jq 'if .advanced.ext_pan_id_string then .advanced.ext_pan_id = (.advanced.ext_pan_id_string | (split(",")|map(tonumber))) | del(.advanced.ext_pan_id_string) else . end' \
@@ -41,10 +43,11 @@ do
         | MQTT_USER="$MQTT_USER"  jq '.mqtt.user=env.MQTT_USER' \
         | MQTT_PASSWORD="$MQTT_PASSWORD" jq '.mqtt.password=env.MQTT_PASSWORD' \
         | MQTT_SERVER="$MQTT_SERVER" jq '.mqtt.server=env.MQTT_SERVER' \
-        > /config/zigbee2mqtt-multi-coordinator/$NAME/configuration.yaml
+        > $DATA_PATH/configuration.yaml
 
     mkdir -p /etc/services.d/zigbee2mqtt-$NAME
     cp /etc/services.d/run.template /etc/services.d/zigbee2mqtt-$NAME/run
-    sed -i "s/{{ data_path }}/\/config\/zigbee2mqtt-multi-coordinator\/$NAME/g" /etc/services.d/zigbee2mqtt-$NAME/run
+    DATA_PATH_ESCAPE=$(echo $DATA_PATH | sed 's_/_\\/_g')
+    sed -i "s/{{ data_path }}/$DATA_PATH_ESCAPE/g" /etc/services.d/zigbee2mqtt-$NAME/run
     chmod +x /etc/services.d/zigbee2mqtt-$NAME/run
 done
