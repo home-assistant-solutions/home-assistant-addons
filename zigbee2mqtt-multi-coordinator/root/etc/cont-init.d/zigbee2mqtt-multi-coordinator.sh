@@ -41,4 +41,9 @@ do
         | MQTT_PASSWORD="$MQTT_PASSWORD" jq '.mqtt.password=env.MQTT_PASSWORD' \
         | MQTT_SERVER="$MQTT_SERVER" jq '.mqtt.server=env.MQTT_SERVER' \
         > /config/zigbee2mqtt-multi-coordinator/$NAME/configuration.yaml
+
+    mkdir -p /etc/services.d/zigbee2mqtt-$NAME
+    cp /etc/services.d/run.template /etc/services.d/zigbee2mqtt-$NAME/run
+    sed -i "s/{{ data_path }}/\/config\/zigbee2mqtt-multi-coordinator\/$NAME/g" /etc/services.d/zigbee2mqtt-$NAME/run
+    chmod +x /etc/services.d/zigbee2mqtt-$NAME/run
 done
