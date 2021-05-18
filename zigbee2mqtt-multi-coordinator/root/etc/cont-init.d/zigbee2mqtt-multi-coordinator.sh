@@ -1,5 +1,6 @@
 #!/usr/bin/with-contenv bashio
 
+rm -rf /etc/services.d/zigbee2mqtt-*
 COORDINATORS=$(bashio::config 'coordinators')
 for COORDINATOR in $COORDINATORS
 do
