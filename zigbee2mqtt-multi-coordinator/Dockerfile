@@ -23,3 +23,11 @@ RUN \
   npm run build && \
   cd - && rm -rf /frontend
 
+RUN git clone https://github.com/nurikk/z2m-frontend.git /frontend
+RUN \
+  cd /frontend && \
+  npm install && \
+  npm run build && \
+  mv ./dist /var/www/frontend/zigbee2mqtt-frontend && \
+  cd - && rm -rf /frontend
+
