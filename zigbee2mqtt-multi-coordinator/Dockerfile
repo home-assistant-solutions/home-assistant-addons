@@ -15,3 +15,11 @@ RUN \
   cd /etc/services.d/api && \
   pip3 install -r requirements.txt && \
   cd -
+
+COPY frontend /frontend
+RUN \
+  cd /frontend && \
+  npm install && \
+  npm run build && \
+  cd - && rm -rf /frontend
+
