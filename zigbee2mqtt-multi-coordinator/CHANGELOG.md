@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/Home-Assistant-Solutions/home-assistant-addons/compare/zigbee2mqtt-multi-coordinator-v1.1.1...zigbee2mqtt-multi-coordinator-v1.1.2) (2021-06-17)
+
+
+### Bug Fixes
+
+* remove hardcoded iframe URL ([5ac3549](https://github.com/Home-Assistant-Solutions/home-assistant-addons/commit/5ac3549ff38779bcb0e125b79602031f8a22e59f))
+
 ## [1.1.1](https://github.com/Home-Assistant-Solutions/home-assistant-addons/compare/zigbee2mqtt-multi-coordinator-v1.1.0...zigbee2mqtt-multi-coordinator-v1.1.1) (2021-06-17)
 
 
