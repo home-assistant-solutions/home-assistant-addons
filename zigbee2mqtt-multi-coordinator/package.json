@@ -13,12 +13,14 @@
             "@semantic-release/release-notes-generator",
             "@semantic-release/github",
             "@semantic-release/changelog",
-            "@semantic-release/git"
+            "@semantic-release/git",
+            "semantic-release-docker"
         ],
         "verifyConditions": [
             "@semantic-release/changelog",
             "@semantic-release/git",
-            "@semantic-release/github"
+            "@semantic-release/github",
+            "semantic-release-docker"
         ],
         "analyzeCommits": [
             "@semantic-release/commit-analyzer"
@@ -36,7 +38,13 @@
             ]
         ],
         "publish": [
-            "@semantic-release/github"
+            "@semantic-release/github",
+            [
+                "semantic-release-docker",
+                {
+                    "name": "pascal90/zigbee2mqtt-multi-coordinator-addon"
+                }
+            ]
         ],
         "success": [
             "@semantic-release/github"
@@ -52,6 +60,7 @@
         "@semantic-release/changelog": "^5.0.1",
         "@semantic-release/git": "^9.0.0",
         "semantic-release": "^17.4.3",
+        "semantic-release-docker": "^2.2.0",
         "semantic-release-monorepo": "^7.0.5"
     }
 }
