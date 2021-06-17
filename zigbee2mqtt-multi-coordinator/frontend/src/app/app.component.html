@@ -1,12 +1,14 @@
 <mat-toolbar>
     <span>Zigbee2MQTT Multi Coordinator</span>
     <div class="select">
-        Selected Coordintaor:
-        <mat-select (selectionChange)="onCoordinatorSelected($event.value)">
-            <mat-option *ngFor="let coordinator of options?.coordinators" [value]="coordinator.name">
-                {{coordinator.name}}
-            </mat-option>
-        </mat-select>
+        <mat-form-field>
+            <mat-label>Select coordinator</mat-label>
+            <mat-select (selectionChange)="onCoordinatorSelected($event.value)">
+                <mat-option *ngFor="let coordinator of options?.coordinators" [value]="coordinator.name">
+                    {{coordinator.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
     </div>
 </mat-toolbar>
 <div class="center" *ngIf="!selectedCoordinator; else iframe">

@@ -13,3 +13,11 @@ iframe {
     justify-content: center;
     margin-top: 10em;
 }
+
+mat-toolbar {
+    height: 4em;
+}
+
+mat-form-field {
+    width: 12em;
+}
