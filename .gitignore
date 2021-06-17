@@ -45,3 +45,4 @@ Temporary Items
 venv
 node_modules
 workspace.code-workspace
+zigbee2mqtt-multi-coordinator/zigbee2mqtt-multi-coordinator

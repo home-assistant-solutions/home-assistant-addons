@@ -1,0 +1,6 @@
+#!/usr/bin/with-contenv bashio
+
+export NODE_PATH=/opt/zigbee2mqtt/node_modules
+cd /opt/zigbee2mqtt
+bashio::log.info "Handing over control to Zigbee2mqtt Core ..."
+ZIGBEE2MQTT_DATA={{ data_path }} exec npm start
