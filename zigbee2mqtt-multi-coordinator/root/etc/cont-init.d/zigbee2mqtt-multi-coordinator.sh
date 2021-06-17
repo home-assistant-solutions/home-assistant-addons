@@ -46,7 +46,7 @@ do
         > $DATA_PATH/configuration.yaml
 
     mkdir -p /etc/services.d/zigbee2mqtt-$NAME
-    cp /etc/services.d/run.template /etc/services.d/zigbee2mqtt-$NAME/run
+    cp /templates/run.template /etc/services.d/zigbee2mqtt-$NAME/run
     DATA_PATH_ESCAPE=$(echo $DATA_PATH | sed 's_/_\\/_g')
     sed -i "s/{{ data_path }}/$DATA_PATH_ESCAPE/g" /etc/services.d/zigbee2mqtt-$NAME/run
     chmod +x /etc/services.d/zigbee2mqtt-$NAME/run
