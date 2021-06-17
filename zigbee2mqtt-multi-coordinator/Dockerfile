@@ -11,11 +11,6 @@ RUN npm ci --production
 
 COPY root /
 
-RUN \ 
-  cd /etc/services.d/api && \
-  pip3 install -r requirements.txt && \
-  cd -
-
 COPY frontend /frontend
 RUN \
   cd /frontend && \
