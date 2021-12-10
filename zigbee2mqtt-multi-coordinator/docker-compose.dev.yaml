@@ -6,6 +6,7 @@ services:
     volumes:
       - ./options.json:/data/options.json
       - ./zigbee2mqtt-multi-coordinator:/config/zigbee2mqtt-multi-coordinator
+      - ./root:/environment
       - /run/udev:/run/udev:ro
     devices:
       - /dev/ttyACM0:/dev/ttyACM0

@@ -1,11 +1,13 @@
 #!/usr/bin/with-contenv bashio
 
 rm -rf /etc/services.d/zigbee2mqtt-*
-COORDINATORS=$(bashio::config 'coordinators')
-for COORDINATOR in $COORDINATORS
+OPTIONS=$(cat /data/options.json)
+for COORDINATOR in $(echo "${OPTIONS}" | jq -r '.coordinators[] | @base64' )
 do
-    NAME=$(echo $COORDINATOR | jq -r '.name')    
-    CONFIG=$(echo $COORDINATOR | jq '.config')
+    DECODED_COORDINATOR=$(echo $COORDINATOR | base64 -d)
+    NAME=$(echo $DECODED_COORDINATOR | jq -r '.name')    
+    CONFIG=$(to_json.py "$(echo $DECODED_COORDINATOR | jq '.config')")
+
     MQTT_SERVER=$(echo $CONFIG | jq -r '.mqtt.server')
     MQTT_USER=$(echo $CONFIG | jq -r '.mqtt.user')
     MQTT_PASSWORD=$(echo $CONFIG | jq -r '.mqtt.password')
