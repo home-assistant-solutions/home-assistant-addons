@@ -9,17 +9,18 @@ import { DataService } from './services/data.service';
 })
 export class AppComponent {
   options: any = {};
-  selectedCoordinator = null;
+  selectedCoordinator: string | null = null;
   frontendUrl: any;
 
   constructor(private dataService: DataService, private sanitizer: DomSanitizer) {
     this.dataService.getOptions().subscribe(options => {
       this.options = options;
+      this.selectCoordinator(options.coordinators[0].name);
     })
   }
 
-  onCoordinatorSelected(coordinator: any) {
-    this.frontendUrl = this.sanitizer.bypassSecurityTrustResourceUrl('/zigbee2mqtt-' + coordinator);
+  selectCoordinator(coordinator: string) {
+    this.frontendUrl = this.sanitizer.bypassSecurityTrustResourceUrl('zigbee2mqtt-' + coordinator);
     this.selectedCoordinator = coordinator;
   }
 }
