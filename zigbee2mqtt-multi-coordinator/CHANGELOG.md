@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/Home-Assistant-Solutions/home-assistant-addons/compare/zigbee2mqtt-multi-coordinator-v1.2.1...zigbee2mqtt-multi-coordinator-v1.2.2) (2021-12-16)
+
+
+### Bug Fixes
+
+* create nginx run directory ([5bc5d95](https://github.com/Home-Assistant-Solutions/home-assistant-addons/commit/5bc5d9555f7a4b2e00f57713e334bdde322ff521))
+
 ## [1.2.1](https://github.com/Home-Assistant-Solutions/home-assistant-addons/compare/zigbee2mqtt-multi-coordinator-v1.2.0...zigbee2mqtt-multi-coordinator-v1.2.1) (2021-12-16)
 
 
