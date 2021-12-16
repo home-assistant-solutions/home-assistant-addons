@@ -1,3 +1,19 @@
+# [1.2.0](https://github.com/Home-Assistant-Solutions/home-assistant-addons/compare/zigbee2mqtt-multi-coordinator-v1.1.2...zigbee2mqtt-multi-coordinator-v1.2.0) (2021-12-16)
+
+
+### Bug Fixes
+
+* add missing dependency ([3e6c9c3](https://github.com/Home-Assistant-Solutions/home-assistant-addons/commit/3e6c9c3dccd6173f1de69ef442b1bb0f5f244caa))
+* fill rest of height with iframe container ([647751d](https://github.com/Home-Assistant-Solutions/home-assistant-addons/commit/647751d3229c4383baeb89de20d7cf54ed257729))
+
+
+### Features
+
+* parse z2m config from string ([173433a](https://github.com/Home-Assistant-Solutions/home-assistant-addons/commit/173433a807d661c52d6ad777e0be712dab68f322))
+* select first coordinator by default ([d48d5bd](https://github.com/Home-Assistant-Solutions/home-assistant-addons/commit/d48d5bd8496539d10a6b02574d083c0217de0c35))
+* support home assistant ingress network ([6ad9aeb](https://github.com/Home-Assistant-Solutions/home-assistant-addons/commit/6ad9aeb3852c716ab77fd18684919b39a4db108d))
+* use wget to download zigbee2mqtt release package ([5519541](https://github.com/Home-Assistant-Solutions/home-assistant-addons/commit/5519541979eb9a84b2b8495bba79b2b4945ba604))
+
 ## [1.1.2](https://github.com/Home-Assistant-Solutions/home-assistant-addons/compare/zigbee2mqtt-multi-coordinator-v1.1.1...zigbee2mqtt-multi-coordinator-v1.1.2) (2021-06-17)
 
 
