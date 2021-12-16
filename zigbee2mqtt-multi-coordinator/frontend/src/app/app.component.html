@@ -13,9 +13,7 @@
         </mat-form-field>
     </div>
 </mat-toolbar>
-<div class="center" *ngIf="!selectedCoordinator; else iframe">
-    <h2>Please select coordinator</h2>
-</div>
-<ng-template #iframe>
+
+<div class="iframe-container">
     <iframe [src]="frontendUrl"></iframe>    
-</ng-template>
+</div>
