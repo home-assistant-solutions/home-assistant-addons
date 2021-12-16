@@ -19,7 +19,7 @@ export class AppComponent {
   }
 
   onCoordinatorSelected(coordinator: any) {
-    this.frontendUrl = this.sanitizer.bypassSecurityTrustResourceUrl('/zigbee2mqtt-' + coordinator);
+    this.frontendUrl = this.sanitizer.bypassSecurityTrustResourceUrl('zigbee2mqtt-' + coordinator);
     this.selectedCoordinator = coordinator;
   }
 }

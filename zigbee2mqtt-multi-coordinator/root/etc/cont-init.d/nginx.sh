@@ -1,4 +1,5 @@
 #!/usr/bin/with-contenv bashio
+chmod 666 /data/options.json
 OPTIONS=$(cat /data/options.json)
 for COORDINATOR in $(echo "${OPTIONS}" | jq -r '.coordinators[] | @base64' ); do
     DECODED_COORDINATOR=$(echo $COORDINATOR | base64 -d)
