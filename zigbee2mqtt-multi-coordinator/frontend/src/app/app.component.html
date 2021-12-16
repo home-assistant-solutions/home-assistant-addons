@@ -3,7 +3,9 @@
     <div class="select">
         <mat-form-field>
             <mat-label>Select coordinator</mat-label>
-            <mat-select (selectionChange)="onCoordinatorSelected($event.value)">
+            <mat-select 
+                [value]="selectedCoordinator"
+                (selectionChange)="selectCoordinator($event.value)">
                 <mat-option *ngFor="let coordinator of options?.coordinators" [value]="coordinator.name">
                     {{coordinator.name}}
                 </mat-option>
