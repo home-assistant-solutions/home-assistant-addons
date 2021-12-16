@@ -9,6 +9,6 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   getOptions() {
-    return this.http.get('/data/options.json')
+    return this.http.get('data/options.json')
   }
 }
