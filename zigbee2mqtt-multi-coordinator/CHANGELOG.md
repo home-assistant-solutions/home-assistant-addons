@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/Home-Assistant-Solutions/home-assistant-addons/compare/zigbee2mqtt-multi-coordinator-v1.2.0...zigbee2mqtt-multi-coordinator-v1.2.1) (2021-12-16)
+
+
+### Bug Fixes
+
+* add docker image name to config ([96d07a0](https://github.com/Home-Assistant-Solutions/home-assistant-addons/commit/96d07a0a7f6c0e91cb97bfc6a2d9b6d82e910ad4))
+
 # [1.2.0](https://github.com/Home-Assistant-Solutions/home-assistant-addons/compare/zigbee2mqtt-multi-coordinator-v1.1.2...zigbee2mqtt-multi-coordinator-v1.2.0) (2021-12-16)
 
 
