@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/Home-Assistant-Solutions/home-assistant-addons/compare/zigbee2mqtt-multi-coordinator-v1.2.2...zigbee2mqtt-multi-coordinator-v1.2.3) (2022-01-05)
+
+
+### Bug Fixes
+
+* update zigbee2mqtt version ([575133f](https://github.com/Home-Assistant-Solutions/home-assistant-addons/commit/575133f86be23da0cac451213d0d32826ce6d19f))
+
 ## [1.2.2](https://github.com/Home-Assistant-Solutions/home-assistant-addons/compare/zigbee2mqtt-multi-coordinator-v1.2.1...zigbee2mqtt-multi-coordinator-v1.2.2) (2021-12-16)
 
 
