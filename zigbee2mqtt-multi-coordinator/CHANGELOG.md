@@ -1,3 +1,11 @@
+## [1.2.4](https://github.com/Home-Assistant-Solutions/home-assistant-addons/compare/zigbee2mqtt-multi-coordinator-v1.2.3...zigbee2mqtt-multi-coordinator-v1.2.4) (2022-01-05)
+
+
+### Bug Fixes
+
+* create nginx run directory without error if exist ([d26959a](https://github.com/Home-Assistant-Solutions/home-assistant-addons/commit/d26959aa0325ca30323740de87946cf71efabd46))
+* remove hardcoded coordinator name from template ([6614abd](https://github.com/Home-Assistant-Solutions/home-assistant-addons/commit/6614abd4e24a4d5325c63a2bbb5f5212e8e70a80))
+
 ## [1.2.3](https://github.com/Home-Assistant-Solutions/home-assistant-addons/compare/zigbee2mqtt-multi-coordinator-v1.2.2...zigbee2mqtt-multi-coordinator-v1.2.3) (2022-01-05)
 
 
