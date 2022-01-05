@@ -1,6 +1,6 @@
 location /zigbee2mqtt-{{ name }} {
     proxy_pass http://localhost:{{ port }}/;
-    rewrite ^([^.]*[^/])$ ${http_referer}zigbee2mqtt-test/ permanent;
+    rewrite ^([^.]*[^/])$ ${http_referer}zigbee2mqtt-{{ name }}/ permanent;
     proxy_set_header Host $host;
     proxy_set_header X-Real-IP $remote_addr;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
