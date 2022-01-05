@@ -1,6 +1,7 @@
 {
   "name": "Zigbee2mqtt Multi Coordinator",
   "version": "1.2.3",
+  "image": "pascal90/zigbee2mqtt-multi-coordinator-addon",
   "slug": "zigbee2mqtt_multi_coordinator",
   "description": "Zigbee2mqtt Multi Coordinator add-on",
   "uart": true,
