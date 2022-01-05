@@ -1,11 +1,10 @@
 {
   "name": "Zigbee2mqtt Multi Coordinator",
   "version": "1.2.3",
-  "image": "pascal90/zigbee2mqtt-multi-coordinator-addon",
-  "slug": "zigbee2mqtt",
-  "description": "Zigbee2mqtt add-on",
+  "slug": "zigbee2mqtt_multi_coordinator",
+  "description": "Zigbee2mqtt Multi Coordinator add-on",
   "uart": true,
-  "url": "https://github.com/zigbee2mqtt/hassio-zigbee2mqtt/tree/master/zigbee2mqtt",
+  "url": "https://github.com/Home-Assistant-Solutions/home-assistant-addons",
   "startup": "application",
   "services": [
     "mqtt:need"
@@ -33,7 +32,7 @@
   "options": {
     "coordinators": [
       {
-        "name": "test",
+        "name": "default",
         "config": "external_converters: []\ndevices: devices.yaml\ngroups: groups.yaml\nhomeassistant: true\npermit_join: false\nmqtt:\n  base_topic: zigbee2mqtt\nserial:\n  port: /dev/ttyACM0\nadvanced:\n  log_level: warn\n  pan_id: 6754\n  channel: 11\n  network_key:\n    - 1\n    - 3\n    - 5\n    - 7\n    - 9\n    - 11\n    - 13\n    - 15\n    - 0\n    - 2\n    - 4\n    - 6\n    - 8\n    - 10\n    - 12\n    - 13\n  availability_blocklist: []\n  availability_passlist: []\ndevice_options: {}\nblocklist: []\npasslist: []\nqueue: {}\nfrontend:\n  port: 8080\nexperimental: {}\navailability: false\nsocat:\n  enabled: false\n  master: pty,raw,echo=0,link=/tmp/ttyZ2M,mode=777\n  slave: tcp-listen:8485,keepalive,nodelay,reuseaddr,keepidle=1,keepintvl=1,keepcnt=5\n  options: '-d -d'\n  log: false"
       }
     ]
