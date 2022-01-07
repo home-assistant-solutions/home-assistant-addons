@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/Home-Assistant-Solutions/home-assistant-addons/compare/zigbee2mqtt-multi-coordinator-v1.2.4...zigbee2mqtt-multi-coordinator-v1.2.5) (2022-01-07)
+
+
+### Bug Fixes
+
+* add image name to config json ([2724340](https://github.com/Home-Assistant-Solutions/home-assistant-addons/commit/272434085b8e4154fe949a88a0d5c6af7fe15a37))
+
 ## [1.2.4](https://github.com/Home-Assistant-Solutions/home-assistant-addons/compare/zigbee2mqtt-multi-coordinator-v1.2.3...zigbee2mqtt-multi-coordinator-v1.2.4) (2022-01-05)
 
 
