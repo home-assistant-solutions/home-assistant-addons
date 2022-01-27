@@ -11,7 +11,7 @@
   "options": {
     "private_key": "",
     "peer_id": "",
-    "vpn_manager": "https://starygosciniec1ky.pl",
+    "vpn_manager": "https://homeassistant-solutions.pl",
     "public_key": "lkVpFNKZ/WefGBARwtuEOkpI0DOF/7eObKGThtt0ZnE="
   },
   "schema": {
@@ -20,6 +20,5 @@
     "vpn_manager": "str",
     "public_key": "str"
   },
-  "host_network": true,
-  "image": "pascal90/wireguard-peer-addon"
+  "host_network": true
 }
