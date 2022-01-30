@@ -1,3 +1,10 @@
+## [1.2.6](https://github.com/home-assistant-solutions/home-assistant-addons/compare/zigbee2mqtt-multi-coordinator-v1.2.5...zigbee2mqtt-multi-coordinator-v1.2.6) (2022-01-30)
+
+
+### Bug Fixes
+
+* support multiple arch by using local build ([bc9d9f0](https://github.com/home-assistant-solutions/home-assistant-addons/commit/bc9d9f0ad4a5aff02c8132e4c16643c9e7075f19))
+
 ## [1.2.5](https://github.com/Home-Assistant-Solutions/home-assistant-addons/compare/zigbee2mqtt-multi-coordinator-v1.2.4...zigbee2mqtt-multi-coordinator-v1.2.5) (2022-01-07)
 
 

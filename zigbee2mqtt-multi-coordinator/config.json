@@ -1,11 +1,10 @@
 {
   "name": "Zigbee2mqtt Multi Coordinator",
-  "version": "1.2.5",
-  "image": "pascal90/zigbee2mqtt-multi-coordinator-addon",
+  "version": "1.2.6",
   "slug": "zigbee2mqtt_multi_coordinator",
   "description": "Zigbee2mqtt Multi Coordinator add-on",
   "uart": true,
-  "url": "https://github.com/Home-Assistant-Solutions/home-assistant-addons",
+  "url": "https://github.com/home-assistant-solutions/home-assistant-addons",
   "startup": "application",
   "services": [
     "mqtt:need"
