@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/home-assistant-solutions/home-assistant-addons/compare/wireguard-peer-v1.0.0...wireguard-peer-v1.0.1) (2022-01-30)
+
+
+### Bug Fixes
+
+* support multiple architectures ([86aa9de](https://github.com/home-assistant-solutions/home-assistant-addons/commit/86aa9de7488830bbd22c68ed6e7c1ed0072747e9))
+
 # 1.0.0 (2021-05-03)
 
 
