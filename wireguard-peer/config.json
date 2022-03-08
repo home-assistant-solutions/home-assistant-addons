@@ -10,14 +10,14 @@
   "devices": ["/dev/net/tun"],
   "options": {
     "private_key": "",
-    "peer_id": "",
-    "vpn_manager": "https://homeassistant-solutions.pl",
+    "ip": "",
+    "endpoint": "homeassistant-solutions.pl",
     "public_key": "lkVpFNKZ/WefGBARwtuEOkpI0DOF/7eObKGThtt0ZnE="
   },
   "schema": {
     "private_key": "str",
-    "peer_id": "str",
-    "vpn_manager": "str",
+    "ip": "str",
+    "endpoint": "str",
     "public_key": "str"
   },
   "host_network": true
