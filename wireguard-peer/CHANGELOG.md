@@ -1,3 +1,16 @@
+# [1.1.0](https://github.com/home-assistant-solutions/home-assistant-addons/compare/wireguard-peer-v1.0.2...wireguard-peer-v1.1.0) (2022-03-08)
+
+
+### Bug Fixes
+
+* update docker orb ([ade50c2](https://github.com/home-assistant-solutions/home-assistant-addons/commit/ade50c25a49206ecf8bd11156e4a0542eab99669))
+* update node orb ([d789887](https://github.com/home-assistant-solutions/home-assistant-addons/commit/d7898875cd1e6cc7ef8411ba03df714e57663dbe))
+
+
+### Features
+
+* remove vpn manager dependency ([d12a9e2](https://github.com/home-assistant-solutions/home-assistant-addons/commit/d12a9e289c99b0e772cf89e1e8899a4d1a659f92))
+
 ## [1.0.2](https://github.com/home-assistant-solutions/home-assistant-addons/compare/wireguard-peer-v1.0.1...wireguard-peer-v1.0.2) (2022-01-30)
 
 
