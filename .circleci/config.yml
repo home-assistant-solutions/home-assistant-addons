@@ -1,8 +1,8 @@
 version: 2.1
 
 orbs:
-  docker: circleci/docker@1.0.0
-  node: circleci/node@2.0.1
+  docker: circleci/docker@2.0.2
+  node: circleci/node@5.0.0
 
 jobs:
   release:
