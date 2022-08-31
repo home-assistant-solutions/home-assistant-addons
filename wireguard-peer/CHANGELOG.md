@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/home-assistant-solutions/home-assistant-addons/compare/wireguard-peer-v1.1.0...wireguard-peer-v1.1.1) (2022-08-31)
+
+
+### Bug Fixes
+
+* update Dockerfile ([2b3e0b3](https://github.com/home-assistant-solutions/home-assistant-addons/commit/2b3e0b38ee2a6ee0b241a953210a30309bb9693f))
+
 # [1.1.0](https://github.com/home-assistant-solutions/home-assistant-addons/compare/wireguard-peer-v1.0.2...wireguard-peer-v1.1.0) (2022-03-08)
 
 
