@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/home-assistant-solutions/home-assistant-addons/compare/wireguard-peer-v1.1.1...wireguard-peer-v1.1.2) (2022-08-31)
+
+
+### Bug Fixes
+
+* update build.yaml ([f14f4ba](https://github.com/home-assistant-solutions/home-assistant-addons/commit/f14f4ba52fce69954a972d2256e57bd6ed946f1a))
+
 ## [1.1.1](https://github.com/home-assistant-solutions/home-assistant-addons/compare/wireguard-peer-v1.1.0...wireguard-peer-v1.1.1) (2022-08-31)
 
 
