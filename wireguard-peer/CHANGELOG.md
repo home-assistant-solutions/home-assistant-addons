@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/home-assistant-solutions/home-assistant-addons/compare/wireguard-peer-v1.1.2...wireguard-peer-v1.1.3) (2022-08-31)
+
+
+### Bug Fixes
+
+* update run index and add init false to config ([d7af9d8](https://github.com/home-assistant-solutions/home-assistant-addons/commit/d7af9d8681af99ec6dd9ed89e326408943334383))
+
 ## [1.1.2](https://github.com/home-assistant-solutions/home-assistant-addons/compare/wireguard-peer-v1.1.1...wireguard-peer-v1.1.2) (2022-08-31)
 
 
