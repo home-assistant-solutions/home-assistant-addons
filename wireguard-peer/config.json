@@ -1,6 +1,6 @@
 {
   "name": "Wireguard Peer",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "slug": "wireguard_peer",
   "description": "Wireguard peer with ability to be controlled by Odoo VPN addon. Development version",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
