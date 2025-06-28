@@ -1,3 +1,12 @@
+## [1.1.7](https://github.com/home-assistant-solutions/home-assistant-addons/compare/wireguard-peer-v1.1.6...wireguard-peer-v1.1.7) (2025-06-28)
+
+
+### Bug Fixes
+
+* support releases from macos ([b6d362b](https://github.com/home-assistant-solutions/home-assistant-addons/commit/b6d362bd0d74bc0a01b6808f4b338431ee23df13))
+* update build file ([f8c4d5d](https://github.com/home-assistant-solutions/home-assistant-addons/commit/f8c4d5d67975fe4fd3f47975139a3d03cc21a24d))
+* update orbs ([8a53219](https://github.com/home-assistant-solutions/home-assistant-addons/commit/8a5321921e406d5665be2a11f9a67eac0568356f))
+
 ## [1.1.6](https://github.com/home-assistant-solutions/home-assistant-addons/compare/wireguard-peer-v1.1.5...wireguard-peer-v1.1.6) (2024-01-12)
 
 
