@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [ $# -ne 1 ]; then
+  echo "Usage: $0 NEW_VERSION"
+  exit 1
+fi
+
+NEW_VERSION="$1"
+FILE="config.json"
+
+if [ ! -f "$FILE" ]; then
+  echo "Error: '$FILE' not found"
+  exit 1
+fi
+
+# Choose sed flag syntax based on OS
+if [[ "$(uname)" == "Darwin" ]]; then
+  SED_ARGS=(-i '' -e)
+else
+  SED_ARGS=(-i'' -e)
+fi
+
+# Run replacement
+sed "${SED_ARGS[@]}" "s/\(\"version\":[[:space:]]*\"\)[^\"]*/\1${NEW_VERSION}/" "$FILE"
+
+echo "✅ Updated version in '$FILE' to $NEW_VERSION"

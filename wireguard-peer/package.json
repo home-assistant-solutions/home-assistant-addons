@@ -28,7 +28,7 @@
             [
                 "@semantic-release/exec",
                 {
-                    "prepareCmd": "sed -i'' -e \"s/\\(\"version\":[[:space:]]*\\\"\\)[^\"]*/\\1${nextRelease.version}/\" config.json"
+                    "prepareCmd": "./update-config ${nextRelease.version}"
                 }
             ],
             "@semantic-release/changelog",
