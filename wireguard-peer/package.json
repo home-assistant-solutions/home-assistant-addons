@@ -1,7 +1,7 @@
 {
     "name": "wireguard-peer",
     "scripts": {
-        "semantic-release": "semantic-release"
+        "semantic-release": "semantic-release --no-ci"
     },
     "release": {
         "branches": [
@@ -28,7 +28,7 @@
             [
                 "@semantic-release/exec",
                 {
-                    "prepareCmd": "sed -i 's/\"version\": \".*\"/\"version\": \"${nextRelease.version}\"/g' config.json"
+                    "prepareCmd": "sed -i'' -e \"s/\\(\"version\":[[:space:]]*\\\"\\)[^\"]*/\\1${nextRelease.version}/\" config.json"
                 }
             ],
             "@semantic-release/changelog",
