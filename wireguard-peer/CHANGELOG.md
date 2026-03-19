@@ -1,3 +1,10 @@
+## [1.1.12](https://github.com/home-assistant-solutions/home-assistant-addons/compare/wireguard-peer-v1.1.11...wireguard-peer-v1.1.12) (2026-03-19)
+
+
+### Bug Fixes
+
+* update docker image ([872c89c](https://github.com/home-assistant-solutions/home-assistant-addons/commit/872c89c66b264673e617ae81d083109995cb6416))
+
 ## [1.1.11](https://github.com/home-assistant-solutions/home-assistant-addons/compare/wireguard-peer-v1.1.10...wireguard-peer-v1.1.11) (2025-08-03)
 
 
