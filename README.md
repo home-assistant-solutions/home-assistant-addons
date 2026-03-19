@@ -26,7 +26,7 @@ A Home Assistant add-on that sets up a WireGuard VPN peer, connecting your Home 
 ### Example configuration
 
 ```yaml
-private_key: +LdVGd2ypFeVpIjF6nBrYIEge1XP0wDSZId9WRZgzUs=
+private_key: <your-private-key>
 ip: 10.13.13.9
 endpoint: homeassistant-solutions.pl
 public_key: lkVpFNKZ/WefGBARwtuEOkpI0DOF/7eObKGThtt0ZnE=
