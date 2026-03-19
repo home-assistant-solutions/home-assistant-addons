@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:18.0.3
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:19.0.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -13,7 +13,7 @@ RUN \
         git=2.49.1-r0 \
     \
     && apk add --no-cache \
-        go=1.24.4-r0 \
+        go=1.24.13-r0 \
         iptables=1.8.11-r1 \
         libqrencode-tools=4.1.1-r3 \
         openresolv=3.14.1-r0 \
